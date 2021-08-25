@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Elevregister" 
+             BackgroundColor="{StaticResource Gray50}"
+             x:Class="XamarinElevregister.MainPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame CornerRadius="0" BackgroundColor="{StaticResource Purple500}">
+                <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
+                    <Entry x:Name="sbar" Completed="sbar_Completed" WidthRequest="200" BackgroundColor="White" Placeholder="Sök efter person" TextColor="Black"/>
+                    <Button Text="Sök" Clicked="Button_Clicked" BackgroundColor="WhiteSmoke" CornerRadius="4"/>
+                </StackLayout>
+            </Frame>
+            <ListView x:Name="lstPerson" Grid.Row="1" ItemTapped="lstPerson_ItemTapped" ItemsSource="{Binding PersonList}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="20" Padding="0" Margin="10,5,10,5" BackgroundColor="{StaticResource Purple500}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <StackLayout Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" Orientation="Horizontal" HorizontalOptions="Center" >
+                                        <Label Text="{Binding Fornamn}" FontSize="Small" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding Efternamn}" FontSize="Small" FontAttributes="Bold" TextColor="White"/>
+                                    </StackLayout>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Adress}" Margin="0,0,0,0" HorizontalOptions="Center" FontSize="Small" TextColor="White"/>
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnCreate" Grid.Row="2" Clicked="btnCreate_Clicked" Text="Lägg till elev"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

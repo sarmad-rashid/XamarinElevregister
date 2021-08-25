@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Elevdetaljer"
+             BackgroundColor="{StaticResource Gray50}"
+             x:Class="XamarinElevregister.Pages.DetailsPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Margin="30,30,30,30" Orientation="Vertical">
+                <Label x:Name="dtlLabelFornamn" Text="{Binding Fornamn}" FontSize="Medium"/>
+                <Label x:Name="dtlLabelEfternamn" Text="{Binding Efternamn}"  FontSize="Medium"/>
+                <Label x:Name="dtlLabelPersonnummer" Text="{Binding Personnummer}" FontSize="Medium"/>
+                <Label x:Name="dtlLabelAdress" Text="{Binding Adress}"  FontSize="Medium"/>
+                <Label x:Name="dtlLabelTelefonnummer" Text="{Binding Telefonnummer}"  FontSize="Medium"/>
+                <Label x:Name="dtlLabelEmail" Text="{Binding Email}"  FontSize="Medium"/>
+                <Label Text="Kommentarer: " FontSize="Micro" FontAttributes="Bold"/>
+                <Label x:Name="dtlLabelKommentarer" HeightRequest="100" Text="{Binding Kommentarer}" FontSize="Small"/>
+            </StackLayout>
+            <Button x:Name="btnUpdate" Clicked="btnUpdate_Clicked" Grid.Row="1" Text="Uppdatera"/>
+            <Button x:Name="btnDelete" Clicked="btnDelete_Clicked" Grid.Row="2"  Text="Radera"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

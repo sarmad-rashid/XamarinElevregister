@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{StaticResource Gray50}"
+             x:Class="XamarinElevregister.Pages.UpdatePage">
+    <ContentPage.Content>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Margin="10,10,0,0" Orientation="Vertical">
+                    <Label Text="Förnamn: " FontSize="Medium"/>
+                    <Label Text="Efternamn: " FontSize="Medium"/>
+                    <Label Text="Personnummer: " FontSize="Medium"/>
+                    <Label Text="Adress: " FontSize="Medium"/>
+                    <Label Text="Telefonnummer: " FontSize="Medium"/>
+                    <Label Text="E-mail: " FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Margin="10,10,0,0" Orientation="Vertical" WidthRequest="200">
+                    <Editor x:Name="updEditorFornamn" Text="{Binding Fornamn}"/>
+                    <Editor x:Name="updEditorEfternamn" Text="{Binding Efternamn}"/>
+                    <Editor x:Name="updEditorPersonnummer" Text="{Binding Personnummer}"/>
+                    <Editor x:Name="updEditorAdress" Text="{Binding Adress}"/>
+                    <Editor x:Name="updEditorTelefonnummer" Text="{Binding Telefonnummer}"/>
+                    <Editor x:Name="updEditorEmail" Text="{Binding Email}"/>
+                </StackLayout>
+            </Grid>
+            <Button Grid.Row="1" x:Name="btnUpdate" Clicked="btnUpdate_Clicked"  Text="Uppdatera"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
