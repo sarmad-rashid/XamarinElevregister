@@ -1,0 +1,1 @@
+Get-AppxPackage "b3d3af41-793b-4724-9b6c-5079c3f094d4" -AllUsers | Remove-AppxPackage
